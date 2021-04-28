@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github User\'s Search</string>
+    <string name="app_detail">Detail User</string>
+    <string name="profile">Profile</string>
+    <string name="username_user">Username</string>
+    <string name="name_user">Name User</string>
+    <string name="location_user">Location User</string>
+    <string name="repository_user">Repository User</string>
+    <string name="company_user">Company User</string>
+    <string name="followers_user">Followers User</string>
+    <string name="following_user">Following User</string>
+    <string name="location">Location:</string>
+    <string name="repository">Repository:</string>
+    <string name="company">Company:</string>
+    <string name="followers">Followers:</string>
+    <string name="following">Following:</string>
+    <string name="change_language_settings">Change Language</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Enter Username</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="titlebar">Detail User - %s</string>
+    <string name="titlefavorite">Favorite User</string>
+    <string name="titlefavoritedetail">Favorite User - %s</string>
+    <string name="titlesettings">Settings</string>
+    <string name="setting_reminder">Reminder at 9.00 AM</string>
+    <string name="key_reminder">reminder</string>
+    <string name="change_language">Select Language</string>
+    <string name="language">%s</string>
+    <string name="key_change_language">change_language</string>
+    <string name="time_reminder">09:00</string>
+    <string name="title_reminder">Reminder</string>
+    <string name="message_reminder">Let\'s find popular user on Github!</string>
+    <string name="no_favorite">No favorite users!</string>
+    <string name="no_user">User not found!</string>
+    <string name="no_following">No following</string>
+    <string name="no_followers">No followers</string>
+</resources>
