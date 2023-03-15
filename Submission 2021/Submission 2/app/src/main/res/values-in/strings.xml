@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pencarian Pengguna Github</string>
+    <string name="app_detail">Detail Pengguna</string>
+    <string name="profile">Profil</string>
+    <string name="username_user">Nama Pengguna</string>
+    <string name="name_user">Nama Pengguna</string>
+    <string name="location_user">Lokasi Pengguna</string>
+    <string name="repository_user">Repository Pengguna</string>
+    <string name="company_user">Kantor Pengguna</string>
+    <string name="followers_user">Pengikut Pengguna</string>
+    <string name="following_user">Mengikuti Pengguna</string>
+    <string name="location">Lokasi:</string>
+    <string name="repository">Repositori:</string>
+    <string name="company">Perusahaan:</string>
+    <string name="followers">Pengikut:</string>
+    <string name="following">Mengikuti:</string>
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+    <string name="search">Cari</string>
+    <string name="search_hint">Masukkan Nama Pengguna</string>
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+    <string name="titlebar">Detail Pengguna - %s</string>
+</resources>
