@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.GitHubUser" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/fun_blue</item>
+        <item name="colorPrimaryVariant">@color/fun_blue</item>
+        <item name="colorOnPrimary">@color/fun_blue_2</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/fun_blue_3</item>
+        <item name="colorSecondaryVariant">@color/fun_blue_2</item>
+        <item name="colorOnSecondary">@color/fun_blue_3</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.GitHubUser.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/fun_blue</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_githubuser</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/white</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.GitHubUser</item>
+    </style>
+</resources>

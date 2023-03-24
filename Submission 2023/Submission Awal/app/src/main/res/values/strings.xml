@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GitHub User</string>
+    <string name="github_users_search">GitHub User\'s Search</string>
+    <string name="username">Username</string>
+    <string name="username_format">\@%1$s</string>
+    <string name="name">name</string>
+    <string name="logo_githubuser">Logo GitHubUser</string>
+    <string name="background">Background</string>
+    <string name="bio">Bio</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Enter Username</string>
+    <string name="profile">Profile</string>
+    <string name="username_user">Username</string>
+    <string name="name_user">Name User</string>
+    <string name="location_user">Location User</string>
+    <string name="repository_user">Repository User</string>
+    <string name="company_user">Company User</string>
+    <string name="followers_user">Followers User</string>
+    <string name="following_user">Following User</string>
+    <string name="location">Location:</string>
+    <string name="repository">Repository:</string>
+    <string name="company">Company:</string>
+    <string name="followers">Followers:</string>
+    <string name="following">Following:</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="user_not_found">User Not Found</string>
+</resources>
