@@ -29,16 +29,16 @@ class MainActivity : AppCompatActivity() {
         binding.rvUsers.adapter = adapter
         mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
         mainViewModel.setUser("")
-        mainViewModel.getUser().observe(this, { user ->
+        mainViewModel.getUser().observe(this) { user ->
             if (user != null) {
                 adapter.setData(user)
                 showLoading(false)
             }
-        })
+        }
         adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: User) {
                 val detailActivityIntent = Intent(this@MainActivity, DetailActivity::class.java)
-                detailActivityIntent.putExtra(DetailActivity.EXTRA_USER, data)
+                detailActivityIntent.putExtra(DetailActivity.EXTRA_USER, data.username)
                 startActivity(detailActivityIntent)
             }
         })

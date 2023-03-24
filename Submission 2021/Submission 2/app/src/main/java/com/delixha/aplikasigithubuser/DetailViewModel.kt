@@ -22,16 +22,13 @@ class DetailViewModel : ViewModel() {
                 val result = String(responseBody)
                 try {
                     val responseObject = JSONObject(result)
-                    val avatar = responseObject.getString("avatar_url")
-                    val name = responseObject.getString("name")
-                    val company = responseObject.getString("company")
-                    val location = responseObject.getString("location")
-                    val repository = responseObject.getInt("public_repos")
-                    user.avatar = avatar
-                    user.name = name
-                    user.company = company
-                    user.location = location
-                    user.repository = repository
+                    val user = User(
+                        avatar = responseObject.getString("avatar_url"),
+                        name = responseObject.getString("name"),
+                        company = responseObject.getString("company"),
+                        location = responseObject.getString("location"),
+                        repository = responseObject.getInt("public_repos")
+                    )
                     listUsers.postValue(user)
                 } catch (e: Exception) {
                     Log.d("Exception", e.message.toString())

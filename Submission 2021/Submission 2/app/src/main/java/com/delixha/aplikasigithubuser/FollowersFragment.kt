@@ -36,25 +36,25 @@ class FollowersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = UserAdapter()
         adapter.notifyDataSetChanged()
-        binding.rvUsers2.layoutManager = LinearLayoutManager(activity)
-        binding.rvUsers2.adapter = adapter
+        binding.rvFollowers.layoutManager = LinearLayoutManager(activity)
+        binding.rvFollowers.adapter = adapter
         val username = arguments?.getString(ARG_USERNAME)
         followersViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)
         showLoading(true)
         followersViewModel.setUser(username)
-        followersViewModel.getUser().observe(viewLifecycleOwner, { user ->
+        followersViewModel.getUser().observe(viewLifecycleOwner) { user ->
             if (user != null) {
                 adapter.setData(user)
                 showLoading(false)
             }
-        })
+        }
     }
 
     private fun showLoading(state: Boolean) {
         if (state) {
-            binding.progressBar2.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
         } else {
-            binding.progressBar2.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
         }
     }
 }

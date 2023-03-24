@@ -36,8 +36,8 @@ class FollowingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = UserAdapter()
         adapter.notifyDataSetChanged()
-        binding.rvUsers3.layoutManager = LinearLayoutManager(activity)
-        binding.rvUsers3.adapter = adapter
+        binding.rvFollowing.layoutManager = LinearLayoutManager(activity)
+        binding.rvFollowing.adapter = adapter
         val username = arguments?.getString(ARG_USERNAME)
         followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
         showLoading(true)
@@ -52,9 +52,9 @@ class FollowingFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
         if (state) {
-            binding.progressBar3.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
         } else {
-            binding.progressBar3.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
         }
     }
 }

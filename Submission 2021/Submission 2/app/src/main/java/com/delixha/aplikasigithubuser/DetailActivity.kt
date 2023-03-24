@@ -26,20 +26,19 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var detailViewModel: DetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val user = intent.getParcelableExtra<User>(EXTRA_USER) as User
-        detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DetailViewModel::class.java)
+        val detailViewModel: DetailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
         detailViewModel.setUser(user.username)
-        detailViewModel.getUser().observe(this, { users ->
+        detailViewModel.getUser().observe(this) { users ->
             if (users != null) {
                 showDataDetailUser(users)
             }
-        })
+        }
         this.title = resources.getString(R.string.titlebar).format(user.username)
         val sectionPagerAdapter = SectionsPagerAdapter(this)
         sectionPagerAdapter.username = user.username
