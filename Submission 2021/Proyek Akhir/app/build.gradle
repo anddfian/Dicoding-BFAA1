@@ -5,19 +5,19 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.delixha.aplikasigithubuser"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "GITHUB_TOKEN", '"token ffec0b78f5e6f163812b3daae6ba19fdba29ee69"')
+        buildConfigField("String", "GITHUB_TOKEN", '"token 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"')
     }
     buildTypes {
         release {

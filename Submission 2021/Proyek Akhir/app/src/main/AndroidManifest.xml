@@ -28,7 +28,8 @@
         <activity android:name=".ui.setting.SettingsActivity" />
         <activity android:name=".ui.favorite.FavoriteActivity" />
         <activity android:name=".ui.detail.DetailActivity" />
-        <activity android:name=".ui.home.MainActivity">
+        <activity android:name=".ui.home.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
