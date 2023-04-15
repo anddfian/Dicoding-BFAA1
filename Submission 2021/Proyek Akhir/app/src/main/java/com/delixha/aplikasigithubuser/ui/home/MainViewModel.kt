@@ -48,7 +48,7 @@ class MainViewModel : ViewModel() {
             })
         } else {
             val url = "https://api.github.com/users"
-            client.addHeader("Authorization", "token ffec0b78f5e6f163812b3daae6ba19fdba29ee69")
+            client.addHeader("Authorization", GITHUB_TOKEN)
             client.addHeader("User-Agent", "request")
             client.get(url, object : AsyncHttpResponseHandler() {
                 override fun onSuccess(statusCode: Int, headers: Array<Header>, responseBody: ByteArray) {

@@ -13,7 +13,6 @@ class DetailViewModel : ViewModel() {
     val listUsers = MutableLiveData<User>()
 
     fun setUser(username: String?) {
-        val user = User()
         val client = AsyncHttpClient()
         val url = "https://api.github.com/users/$username"
         client.addHeader("User-Agent", "request")

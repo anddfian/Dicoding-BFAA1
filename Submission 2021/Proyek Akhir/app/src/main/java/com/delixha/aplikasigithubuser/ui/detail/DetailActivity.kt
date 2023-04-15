@@ -74,7 +74,7 @@ class DetailActivity : AppCompatActivity() {
             statusFavorite = !statusFavorite
             setStatusFavorite(statusFavorite)
             if (statusFavorite) {
-                detailViewModel.getUser().observe(this, { users ->
+                detailViewModel.getUser().observe(this) { users ->
                     if (users != null) {
                         val values = ContentValues()
                         values.put(USERNAME, users.username)
@@ -85,25 +85,27 @@ class DetailActivity : AppCompatActivity() {
                         values.put(AVATAR_URL, users.avatar)
                         contentResolver.insert(CONTENT_URI, values)
                     }
-                })
+                }
             } else {
-                detailViewModel.getUser().observe(this, { users ->
+                detailViewModel.getUser().observe(this) { users ->
                     if (users != null) {
                         GlobalScope.launch(Dispatchers.Main) {
                             val deferredNotes = async(Dispatchers.IO) {
-                                val cursor = contentResolver.query(CONTENT_URI, null, null, null, null )
+                                val cursor =
+                                    contentResolver.query(CONTENT_URI, null, null, null, null)
                                 MappingHelper.mapCursorToArrayList(cursor)
                             }
                             val notes = deferredNotes.await()
                             for (data in notes) {
                                 if (data.username == user) {
-                                    val uriWithId = Uri.parse(CONTENT_URI.toString() + "/" + data.id)
+                                    val uriWithId =
+                                        Uri.parse(CONTENT_URI.toString() + "/" + data.id)
                                     contentResolver.delete(uriWithId, null, null)
                                 }
                             }
                         }
                     }
-                })
+                }
             }
         }
     }
@@ -128,11 +130,11 @@ class DetailActivity : AppCompatActivity() {
     private fun initViewModel(user: String?) {
         detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DetailViewModel::class.java)
         detailViewModel.setUser(user)
-        detailViewModel.getUser().observe(this, { users ->
+        detailViewModel.getUser().observe(this) { users ->
             if (users != null) {
                 showDataDetailUser(users)
             }
-        })
+        }
     }
 
     private fun setStatusFavorite(statusFavorite: Boolean) {

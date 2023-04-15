@@ -31,17 +31,17 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val user = intent.getParcelableExtra<User>(EXTRA_USER) as User
+        val user = intent.getStringExtra(EXTRA_USER)
         val detailViewModel: DetailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
-        detailViewModel.setUser(user.username)
+        detailViewModel.setUser(user)
         detailViewModel.getUser().observe(this) { users ->
             if (users != null) {
                 showDataDetailUser(users)
             }
         }
-        this.title = resources.getString(R.string.titlebar).format(user.username)
+        this.title = resources.getString(R.string.titlebar).format(user)
         val sectionPagerAdapter = SectionsPagerAdapter(this)
-        sectionPagerAdapter.username = user.username
+        sectionPagerAdapter.username = user
         val viewPager: ViewPager2 = binding.viewPager
         viewPager.adapter = sectionPagerAdapter
         val tabs: TabLayout = binding.tabs

@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
         binding.rvUsers.layoutManager = LinearLayoutManager(this)
         binding.rvUsers.adapter = adapter
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
         mainViewModel.setUser("")
         mainViewModel.getUser().observe(this) { user ->
             if (user != null) {

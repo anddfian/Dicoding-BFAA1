@@ -10,7 +10,7 @@ object UserContract {
 
     class UserColums: BaseColumns {
         companion object {
-            const val TABLE_NAME = "user"
+            private const val TABLE_NAME = "user"
             const val _ID = "_id"
             const val USERNAME = "username"
             const val NAME = "name"

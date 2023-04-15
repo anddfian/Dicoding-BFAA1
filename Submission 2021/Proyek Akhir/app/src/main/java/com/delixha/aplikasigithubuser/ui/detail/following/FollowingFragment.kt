@@ -44,12 +44,12 @@ class FollowingFragment : Fragment() {
             FollowingViewModel::class.java)
         showLoading(true)
         followingViewModel.setUser(username)
-        followingViewModel.getUser().observe(viewLifecycleOwner, { user ->
+        followingViewModel.getUser().observe(viewLifecycleOwner) { user ->
             if (user != null) {
                 adapter.setData(user)
                 showLoading(false)
             }
-        })
+        }
     }
 
     private fun showLoading(state: Boolean) {

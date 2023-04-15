@@ -39,7 +39,7 @@ class FollowersFragment : Fragment() {
         binding.rvFollowers.layoutManager = LinearLayoutManager(activity)
         binding.rvFollowers.adapter = adapter
         val username = arguments?.getString(ARG_USERNAME)
-        followersViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)
+        followersViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[FollowersViewModel::class.java]
         showLoading(true)
         followersViewModel.setUser(username)
         followersViewModel.getUser().observe(viewLifecycleOwner) { user ->

@@ -49,16 +49,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
     }
 
     private fun observeData() {
         var firstLoad = false
         mainViewModel.setUser("")
-        mainViewModel.getUser().observe(this, { user ->
+        mainViewModel.getUser().observe(this) { user ->
             if (user != null) {
-                if(firstLoad && user.size == 0) {
+                if (firstLoad && user.size == 0) {
                     Snackbar.make(binding.rvUsers, R.string.no_user, Snackbar.LENGTH_LONG).show()
                 } else {
                     firstLoad = true
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 adapter.setData(user)
                 showLoading(false)
             }
-        })
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
